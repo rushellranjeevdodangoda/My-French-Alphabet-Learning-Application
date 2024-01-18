@@ -1,0 +1,87 @@
+name: my_french_app
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.14.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  google_fonts: ^6.1.0
+  just_audio: ^0.9.0
+  firebase_core: 2.24.2
+  firebase_auth: ^4.16.0
+  google_sign_in: ^6.2.1
+  get: ^4.6.6
+  cloud_firestore: ^4.14.0
+  flutter_easyloading: ^3.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - lib/assets/images/HomeScreen.png
+    - lib/assets/images/Lock.png 
+    - lib/assets/images/French_Flag.png 
+    - lib/assets/images/example_images/example_A.png
+    - lib/assets/images/example_images/example_B.png
+    - lib/assets/images/example_images/example_C.png
+    - lib/assets/images/example_images/example_D.png
+    - lib/assets/images/example_images/example_E.png
+    - lib/assets/images/example_images/example_F.png
+    - lib/assets/images/example_images/example_G.png
+    - lib/assets/images/example_images/example_H.png
+    - lib/assets/images/example_images/example_I.png
+    - lib/assets/images/example_images/example_J.png
+    - lib/assets/images/example_images/example_K.png
+    - lib/assets/images/example_images/example_L.png
+    - lib/assets/images/example_images/example_M.png
+    - lib/assets/images/example_images/example_N.png
+    - lib/assets/images/example_images/example_O.png
+    - lib/assets/images/example_images/example_P.png
+    - lib/assets/images/example_images/example_Q.png
+    - lib/assets/images/example_images/example_R.png
+    - lib/assets/images/example_images/example_S.png
+    - lib/assets/images/example_images/example_T.png
+    - lib/assets/images/example_images/example_U.png
+    - lib/assets/images/example_images/example_V.png
+    - lib/assets/images/example_images/example_W.png
+    - lib/assets/images/example_images/example_X.png
+    - lib/assets/images/example_images/example_Y.png
+    - lib/assets/images/example_images/example_Z.png
+    - lib/assets/images/UK_Flag.png 
+    - lib/assets/audio/LetterA.mp3
+    - lib/assets/audio/LetterB.mp3
+    - lib/assets/audio/LetterC.mp3
+    - lib/assets/audio/LetterD.mp3
+    - lib/assets/audio/LetterE.mp3
+    - lib/assets/audio/LetterF.mp3
+    - lib/assets/audio/LetterG.mp3
+    - lib/assets/audio/LetterH.mp3
+    - lib/assets/audio/LetterI.mp3
+    - lib/assets/audio/LetterJ.mp3
+    - lib/assets/audio/LetterK.mp3
+    - lib/assets/audio/LetterL.mp3
+    - lib/assets/audio/LetterM.mp3
+    - lib/assets/audio/LetterN.mp3
+    - lib/assets/audio/LetterO.mp3
+    - lib/assets/audio/LetterP.mp3
+    - lib/assets/audio/LetterQ.mp3
+    - lib/assets/audio/LetterR.mp3
+    - lib/assets/audio/LetterS.mp3
+    - lib/assets/audio/LetterT.mp3
+    - lib/assets/audio/LetterU.mp3
+    - lib/assets/audio/LetterV.mp3
+    - lib/assets/audio/LetterW.mp3
+    - lib/assets/audio/LetterX.mp3
+    - lib/assets/audio/LetterY.mp3
+    - lib/assets/audio/LetterZ.mp3

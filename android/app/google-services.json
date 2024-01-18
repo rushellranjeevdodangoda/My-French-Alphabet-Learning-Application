@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "306271023845",
+    "project_id": "myfrenchapp-ee4cb",
+    "storage_bucket": "myfrenchapp-ee4cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306271023845:android:ffcde98aa0aad4c2205a0c",
+        "android_client_info": {
+          "package_name": "com.example.my_french_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDM7G2XnECDP7umivsA4CB4TJjKluhvQnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
