@@ -76,16 +76,16 @@ class ExamplesPage extends StatelessWidget {
                 const SizedBox(width: 5),
                 Text(
                   frenchWord,
-                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             const SizedBox(height: 20),
-            // Show the dynamically loaded image
+            // Show the dynamically loaded image with increased size
             Image.asset(
               imagePath,
-              width: 150,
-              height: 150,
+              width: 350, // Adjust the width as needed
+              height: 350, // Adjust the height as needed
             ),
             const SizedBox(height: 20),
             const Text(
@@ -104,7 +104,7 @@ class ExamplesPage extends StatelessWidget {
                 const SizedBox(width: 5),
                 Text(
                   englishMeaning,
-                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
