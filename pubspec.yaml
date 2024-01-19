@@ -31,7 +31,10 @@ flutter:
   assets:
     - lib/assets/images/HomeScreen.png
     - lib/assets/images/Lock.png 
+    - lib/assets/images/Age.png
+    - lib/assets/images/AgeVerify.png
     - lib/assets/images/French_Flag.png 
+    - lib/assets/images/Menu_bg.png
     - lib/assets/images/example_images/example_A.png
     - lib/assets/images/example_images/example_B.png
     - lib/assets/images/example_images/example_C.png

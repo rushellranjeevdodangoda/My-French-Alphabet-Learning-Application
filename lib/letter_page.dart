@@ -32,7 +32,6 @@ class _LetterPageState extends State<LetterPage> {
     await player.play();
   }
 
-  // Updated function to navigate to the Examples page
   void navigateToExamples(BuildContext context) {
     Navigator.push(
       context,
@@ -44,8 +43,8 @@ class _LetterPageState extends State<LetterPage> {
 
   @override
   Widget build(BuildContext context) {
-    Color primaryColor = const Color.fromARGB(255, 81, 91, 205); // Your old purple color
-    Color accentColor = Colors.white;
+    Color primaryColor = Colors.white; // Your old purple color
+    Color accentColor = const Color.fromARGB(255, 124, 72, 237);
 
     double buttonWidth = 150.0; // Set the fixed width for both buttons
     double buttonHeight = 50.0; // Set the fixed height for both buttons
@@ -53,92 +52,101 @@ class _LetterPageState extends State<LetterPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Letter ${widget.letter}'),
-        backgroundColor: primaryColor,
-        foregroundColor: accentColor,
+        backgroundColor: const Color.fromARGB(255, 124, 72, 237),
+        foregroundColor: Colors.white,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Use a Stack to position the letter and "*Vowel" text
-            Stack(
-              alignment: Alignment.topCenter,
-              children: [
-                // Display the relevant letter in a large font
-                Positioned(
-                  child: Text(
-                    widget.letter,
-                    style: TextStyle(
-                      fontSize: 400,
-                      fontWeight: FontWeight.bold,
-                      color: primaryColor,
-                    ),
-                  ),
-                ),
-                // Display "*Vowel" text below the letter
-                if ('AEIOU'.contains(widget.letter))
-                  Positioned(
-                    top: 480, // Adjust the top position as needed
-                    child: Text(
-                      '*Vowel',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: primaryColor,
-                      ),
-                    ),
-                  ),
-              ],
-            ),
-            const SizedBox(height: 30), // Reduce spacing
-            Row(
+      body: Stack(
+        children: [
+          // Background Image
+          Image.asset(
+            'lib/assets/images/Menu_bg.png',
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+          ),
+          Center(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton.icon(
-                  onPressed: playAudio,
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: accentColor, backgroundColor: primaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+                Stack(
+                  alignment: Alignment.topCenter,
+                  children: [
+                    Positioned(
+                      child: Text(
+                        widget.letter,
+                        style: const TextStyle(
+                          fontSize: 400,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
-                    elevation: 5,
-                    fixedSize: Size(buttonWidth, buttonHeight), // Set the fixed size
-                  ),
-                  icon: const Icon(Icons.play_arrow),
-                  label: const Text(
-                    'Play Audio',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                    if ('AEIOU'.contains(widget.letter))
+                      const Positioned(
+                        top: 480,
+                        child: Text(
+                          '*Vowel',
+                          style: TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color:  Colors.white,
+                          ),
+                        ),
+                      ),
+                  ],
                 ),
-                const SizedBox(width: 10), // Add spacing between buttons
-                ElevatedButton(
-                  onPressed: () {
-                    navigateToExamples(context); // Call the updated function
-                  },
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: accentColor,
-                    backgroundColor: primaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton.icon(
+                      onPressed: playAudio,
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: accentColor,
+                        backgroundColor: primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        elevation: 5,
+                        fixedSize: Size(buttonWidth, buttonHeight),
+                      ),
+                      icon: const Icon(Icons.play_arrow),
+                      label: const Text(
+                        'Play Audio',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                    elevation: 5,
-                    fixedSize: Size(buttonWidth, buttonHeight), // Set the fixed size
-                  ),
-                  child: const Text(
-                    'Examples',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                    const SizedBox(width: 10),
+                    ElevatedButton(
+                      onPressed: () {
+                        navigateToExamples(context);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: accentColor,
+                        backgroundColor: primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        elevation: 5,
+                        fixedSize: Size(buttonWidth, buttonHeight),
+                      ),
+                      child: const Text(
+                        'Examples',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

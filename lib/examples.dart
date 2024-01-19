@@ -37,8 +37,7 @@ class ExamplesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color primaryColor =
-        const Color.fromARGB(255, 81, 91, 205); // Your old purple color
+// Your old purple color
     Color accentColor = Colors.white;
 
     // Extract French word and its English meaning from the map
@@ -53,7 +52,7 @@ class ExamplesPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Examples for Letter $letter'),
-        backgroundColor: primaryColor,
+        backgroundColor: Color.fromARGB(255, 124, 72, 237),
         foregroundColor: accentColor,
       ),
       body: Center(
@@ -62,7 +61,7 @@ class ExamplesPage extends StatelessWidget {
           children: [
             Text(
               'French Word Starting From Letter $letter:',
-              style: const TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 22),
             ),
             const SizedBox(height: 10),
             Row(
@@ -90,7 +89,7 @@ class ExamplesPage extends StatelessWidget {
             const SizedBox(height: 20),
             const Text(
               'English Meaning:',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 22),
             ),
             const SizedBox(height: 10),
             Row(

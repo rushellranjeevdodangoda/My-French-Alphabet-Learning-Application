@@ -53,7 +53,7 @@ class WelcomeScreen extends StatelessWidget {
                 onPressed: () => handleStart(context),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.all(16),
-                  backgroundColor: const Color.fromARGB(255, 81, 91, 205),
+                  backgroundColor: Color.fromARGB(255, 124, 72, 237),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),

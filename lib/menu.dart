@@ -25,52 +25,62 @@ class MenuPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Alphabet'),
-        backgroundColor: const Color.fromARGB(255, 81, 91, 205),
+        backgroundColor: Color.fromARGB(255, 124, 72, 237),
         foregroundColor: Colors.white,
       ),
-      body: Container(
-        color: const Color.fromARGB(255, 178, 187, 246),
-        padding: const EdgeInsets.all(15.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 4,
-            crossAxisSpacing: 20.0,
-            mainAxisSpacing: 20.0,
-            childAspectRatio: letterButtonWidth / letterButtonHeight,
+      body: Stack(
+        children: [
+          // Background Image
+          Image.asset(
+            'lib/assets/images/Menu_bg.png',
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
           ),
-          itemCount: letters.length,
-          itemBuilder: (BuildContext context, int index) {
-            String letter = letters[index];
-
-            return ElevatedButton(
-              onPressed: () => handleLetterClick(context, letter),
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.zero,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                backgroundColor: ['A', 'E', 'I', 'O', 'U'].contains(letter)
-                    ? Colors.white
-                    : const Color.fromARGB(255, 81, 91, 205),
-                foregroundColor: ['A', 'E', 'I', 'O', 'U'].contains(letter)
-                    ? Colors.purple
-                    : Colors.white,
+          Container(
+            color: Colors.transparent, // Set the container background to transparent
+            padding: const EdgeInsets.all(15.0),
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
+                crossAxisSpacing: 20.0,
+                mainAxisSpacing: 20.0,
+                childAspectRatio: letterButtonWidth / letterButtonHeight,
               ),
-              child: Center(
-                child: Text(
-                  letter,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: ['A', 'E', 'I', 'O', 'U'].contains(letter)
-                        ? const Color.fromARGB(255, 81, 91, 205)
+              itemCount: letters.length,
+              itemBuilder: (BuildContext context, int index) {
+                String letter = letters[index];
+
+                return ElevatedButton(
+                  onPressed: () => handleLetterClick(context, letter),
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    backgroundColor: Colors.white.withOpacity(1.0), // Set white color with 50% transparency
+                    foregroundColor: ['A', 'E', 'I', 'O', 'U'].contains(letter)
+                        ? Colors.purple
                         : Colors.white,
                   ),
-                ),
-              ),
-            );
-          },
-        ),
+                  child: Center(
+                    child: Text(
+                      letter,
+                      style: TextStyle(
+                        fontFamily: 'PassionOne', // Set the font family to PassionOne
+                        fontSize: 60,
+                        fontWeight: FontWeight.bold,
+                        color: ['A', 'E', 'I', 'O', 'U'].contains(letter)
+                            ? const Color.fromARGB(255, 124, 72, 237)
+                            :  Colors.purple,
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
