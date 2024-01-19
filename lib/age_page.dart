@@ -31,7 +31,8 @@ class _AgePageState extends State<AgePage> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // Center elements vertically
+            mainAxisAlignment:
+                MainAxisAlignment.center, // Center elements vertically
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
@@ -46,7 +47,8 @@ class _AgePageState extends State<AgePage> {
                       _selectedDate != null
                           ? 'Age: ${DateTime.now().difference(_selectedDate!).inDays ~/ 365}'
                           : 'Enter Your Birth Date Here',
-                      style: const TextStyle(fontSize: 18, color: Color.fromARGB(255, 89, 89, 91)),
+                      style: const TextStyle(
+                          fontSize: 18, color: Color.fromARGB(255, 89, 89, 91)),
                     ),
                     onTap: () {
                       _showAgePicker(context);
@@ -58,12 +60,14 @@ class _AgePageState extends State<AgePage> {
               ElevatedButton(
                 onPressed: () {
                   if (_selectedDate != null) {
-                    int age = DateTime.now().difference(_selectedDate!).inDays ~/ 365;
+                    int age =
+                        DateTime.now().difference(_selectedDate!).inDays ~/ 365;
 
                     if (age >= 5) {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const MenuPage()),
+                        MaterialPageRoute(
+                            builder: (context) => const MenuPage()),
                       );
                     } else {
                       showDialog(
@@ -71,7 +75,8 @@ class _AgePageState extends State<AgePage> {
                         builder: (BuildContext context) {
                           return AlertDialog(
                             title: const Text('Age Restriction'),
-                            content: const Text('Sorry, you must be 5 or older to proceed.'),
+                            content: const Text(
+                                'Sorry, you must be 5 or older to proceed.'),
                             actions: [
                               TextButton(
                                 onPressed: () {
@@ -109,7 +114,8 @@ class _AgePageState extends State<AgePage> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
                 ),
                 child: const Text(
                   'Submit',
